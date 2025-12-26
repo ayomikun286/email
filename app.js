@@ -5,7 +5,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const sendEmail = require("./utils/sendEmail");
+const sendEmail = require("./utils/sendUseResend");
 const sendTelegram = require("./utils/sendTelegram");
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
