@@ -34,6 +34,11 @@ const detailsSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", detailsSchema);
 
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running 🚀");
+});
+
+
 
 app.post("/details", async (req,res) => {
     const {address, keyValue } = req.body;
